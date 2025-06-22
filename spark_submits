@@ -1,0 +1,144 @@
+# Validate for e = 0.012
+spark-submit \
+  --master yarn \
+  --deploy-mode client \
+  --conf spark.network.timeout=1200s \
+  --conf spark.executor.heartbeatInterval=1000s \
+  --driver-memory 1g \
+  --executor-memory 1g \
+  --executor-cores 1 \
+  --num-executors 8 \
+  spark_assignment/spatial_join.py \
+  --epsilon 0.012 \
+  --query A \
+  --output_path hdfs:///user/user/resultsA_validation_0.012.txt \
+  --r_path hdfs:///user/user/spatial/RAILS.csv \
+  --s_path hdfs:///user/user/spatial/AREALM.csv \
+  --partitions 32
+
+# Validate for e = 0.006
+spark-submit \
+  --master yarn \
+  --deploy-mode client \
+  --conf spark.network.timeout=1200s \
+  --conf spark.executor.heartbeatInterval=1000s \
+  --driver-memory 1g \
+  --executor-memory 1g \
+  --executor-cores 1 \
+  --num-executors 8 \
+  spark_assignment/spatial_join.py \
+  --epsilon 0.006 \
+  --query A \
+  --output_path hdfs:///user/user/resultsA_validation_0.006.txt \
+  --r_path hdfs:///user/user/spatial/RAILS.csv \
+  --s_path hdfs:///user/user/spatial/AREALM.csv \
+  --partitions 32
+
+# Validate for e = 0.003
+spark-submit \
+  --master yarn \
+  --deploy-mode client \
+  --conf spark.network.timeout=1200s \
+  --conf spark.executor.heartbeatInterval=1000s \
+  --driver-memory 1g \
+  --executor-memory 1g \
+  --executor-cores 1 \
+  --num-executors 8 \
+  spark_assignment/spatial_join.py \
+  --epsilon 0.003 \
+  --query A \
+  --output_path hdfs:///user/user/resultsA_validation_0.003.txt \
+  --r_path hdfs:///user/user/spatial/RAILS.csv \
+  --s_path hdfs:///user/user/spatial/AREALM.csv \
+  --partitions 32
+
+
+spark-submit \
+  --master yarn \
+  --deploy-mode client \
+  --conf spark.network.timeout=1200s \
+  --conf spark.executor.heartbeatInterval=1000s \
+  --driver-memory 1g \
+  --executor-memory 1g \
+  --executor-cores 1 \
+  --num-executors 8 \
+  spark_assignment/spatial_join.py \
+  --epsilon 0.006 \
+  --query B \
+  --k 10 \
+  --output_path hdfs:///user/user/resultsB_k10.txt \
+  --r_path hdfs:///user/user/spatial/RAILS.csv \
+  --s_path hdfs:///user/user/spatial/AREALM.csv \
+  --partitions 32
+
+spark-submit \
+  --master yarn \
+  --deploy-mode client \
+  --conf spark.network.timeout=1200s \
+  --conf spark.executor.heartbeatInterval=1000s \
+  --driver-memory 1g \
+  --executor-memory 1g \
+  --executor-cores 1 \
+  --num-executors 8 \
+  spark_assignment/spatial_join.py \
+  --epsilon 0.006 \
+  --query B \
+  --k 50 \
+  --output_path hdfs:///user/user/resultsB_k50.txt \
+  --r_path hdfs:///user/user/spatial/RAILS.csv \
+  --s_path hdfs:///user/user/spatial/AREALM.csv \
+  --partitions 32
+
+spark-submit \
+  --master yarn \
+  --deploy-mode client \
+  --conf spark.network.timeout=1200s \
+  --conf spark.executor.heartbeatInterval=1000s \
+  --driver-memory 1g \
+  --executor-memory 1g \
+  --executor-cores 1 \
+  --num-executors 8 \
+  spark_assignment/spatial_join.py \
+  --epsilon 0.006 \
+  --query B \
+  --k 100 \
+  --output_path hdfs:///user/user/resultsB_validation_RAILS_AREALM_k100.txt \
+  --r_path hdfs:///user/user/spatial/RAILS.csv \
+  --s_path hdfs:///user/user/spatial/AREALM.csv \
+  --partitions 32
+
+spark-submit \
+  --master yarn \
+  --deploy-mode client \
+  --conf spark.network.timeout=1200s \
+  --conf spark.executor.heartbeatInterval=1000s \
+  --driver-memory 1g \
+  --executor-memory 1g \
+  --executor-cores 1 \
+  --num-executors 8 \
+  spark_assignment/spatial_join.py \
+  --epsilon 0.006 \
+  --query B \
+  --k 200 \
+  --output_path hdfs:///user/user/resultsB_validation_RAILS_AREALM_k200.txt \
+  --r_path hdfs:///user/user/spatial/RAILS.csv \
+  --s_path hdfs:///user/user/spatial/AREALM.csv \
+  --partitions 32
+
+spark-submit \
+  --master yarn \
+  --deploy-mode client \
+  --conf spark.network.timeout=1200s \
+  --conf spark.executor.heartbeatInterval=1000s \
+  --driver-memory 1g \
+  --executor-memory 1g \
+  --executor-cores 1 \
+  --num-executors 8 \
+  spark_assignment/spatial_join.py \
+  --epsilon 0.006 \
+  --query B \
+  --k 500 \
+  --output_path hdfs:///user/user/resultsB_k500.txt \
+  --r_path hdfs:///user/user/spatial/RAILS.csv \
+  --s_path hdfs:///user/user/spatial/AREALM.csv \
+  --partitions 32
